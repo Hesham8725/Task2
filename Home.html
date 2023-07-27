@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/Game.css">
+</head>
+
+<body>
+    <div id="FirstPage">
+        <div class="Landing">
+            <div class="d-flex justify-content-lg-start align-items-center p-4">
+                <h3 class="logotxt"><i class="fa-solid fa-volleyball fa-spin"></i> Quiz Game</h3>
+                <div>
+                    <a href="https://opentdb.com/api_config.php" class="NavLinkes">
+                        <i class="fa-brands fa-staylinked" style="color: #d9e0ed;"></i> Api Use
+                    </a>
+                </div>
+            </div>
+            <div class="leftDiv">
+                <p class="welcomeText"><strong>Welcome to Quiz game!</strong></p>
+                <p class="p2 ">
+                    It is a game that contains a number of questions with
+                    the aim of measuring information in various fields
+                </p>
+            </div>
+            <img src="sss.jpg" class="gameImg ">
+
+            <div class="btns d-flex">
+                <button onclick="GoUrl()" class="btn btn-primary p-2 me-3"> General information</button>
+                <a href="#SI" class="btn btn-outline-primary p-2"> Specific information</a>
+            </div>
+        </div>
+
+        <div id="SI">
+            <center>Specific Information</center>
+            <div class="SI">
+                <div class="w-50 mt-4">
+                    <label for="">Number of Questions</label>
+                    <input type="number" id="NQuestions" class="form-control">
+                    <p id="errorMessage" style="display: none; color: red;">Number of Questions Must be More than 1</p>
+                </div>
+                <div class="w-50 mt-4 mb-4">
+                    <label for="">Category</label>
+                    <select id="category" class="form-control">
+                        <option value="any">Any Category</option>
+                        <option value="9">General Knowledge</option>
+                        <option value="10">Entertainment: Books</option>
+                        <option value="11">Entertainment: Film</option>
+                        <option value="12">Entertainment: Music</option>
+                        <option value="13">Entertainment: Musicals &amp; Theatres</option>
+                        <option value="14">Entertainment: Television</option>
+                        <option value="15">Entertainment: Video Games</option>
+                        <option value="16">Entertainment: Board Games</option>
+                        <option value="17">Science &amp; Nature</option>
+                        <option value="18">Science: Computers</option>
+                        <option value="19">Science: Mathematics</option>
+                        <option value="20">Mythology</option>
+                        <option value="21">Sports</option>
+                        <option value="22">Geography</option>
+                        <option value="23">History</option>
+                        <option value="24">Politics</option>
+                        <option value="25">Art</option>
+                        <option value="26">Celebrities</option>
+                        <option value="27">Animals</option>
+                        <option value="28">Vehicles</option>
+                        <option value="29">Entertainment: Comics</option>
+                        <option value="30">Science: Gadgets</option>
+                        <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
+                        <option value="32">Entertainment: Cartoon &amp; Animations</option>
+                    </select>
+                </div>
+                <div class="w-50 ">
+                    <label for="">Difficulty</label>
+                    <select id="difficulty" class="form-control">
+                        <option value="any">Any Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="w-50 mt-4 mb-4">
+                    <label for="">Type</label>
+                    <select id="type" class="form-control">
+                        <option value="any">Any Type</option>
+                        <option value="multiple">Multiple Choice</option>
+                        <option value="boolean">True / False</option>
+                    </select>
+                </div>
+                <button onclick="GenerateUrl()" class="btn btn-primary w-25" style="margin-left: 13%;"> Start
+                    Quiz</button>
+            </div>
+        </div>
+    </div>
+    <div id="SecondPage" style="display: none;">
+        <div class="content card w-50 pb-2"
+            style="background-color: #eee;font-family: 'Times New Roman', Times, serif;">
+            <div id="QHeadDiv" class="d-flex p-2 justify-content-between d-block">
+                <h5 class="text-warning">Question </h5>
+                <h5 id="QHead" class="text-warning"></h5>
+            </div>
+            <div id="QuestionsMulti" style="display: none;">
+                <div class="pt-3 ps-3 pe-3">
+                    <h3 id="Question" class="m-0 p-0">
+                    </h3>
+                </div>
+                <hr>
+                <span class="d-flex choose align-items-center " id="o1" onclick="IsCorrectAnswer(1)">
+                    <i id="I1" class="fa-solid fa-chevron-up fa-rotate-90 icons " style="color: #ffffff;"></i>
+                    <label class="w-100 lable" id="Option1"></label>
+                </span>
+                <span class="d-flex choose align-items-center " id="o2" onclick="IsCorrectAnswer(2)">
+                    <i id="I2" class="fa-solid fa-chevron-up fa-rotate-90 icons " style="color: #ffffff;"></i>
+                    <label class="w-100 lable" id="Option2"></label>
+                </span>
+                <span class="d-flex choose align-items-center " id="o3" onclick="IsCorrectAnswer(3)">
+                    <i id="I3" class="fa-solid fa-chevron-up fa-rotate-90 icons " style="color: #ffffff;"></i>
+                    <label class="w-100 lable" id="Option3"></label>
+                </span>
+                <span class="d-flex choose align-items-center " id="o4" onclick="IsCorrectAnswer(4)">
+                    <i id="I4" class="fa-solid fa-chevron-up fa-rotate-90 icons " style="color: #ffffff;"></i>
+                    <label class="w-100 lable" id="Option4"></label>
+                </span>
+            </div>
+            <div id="QuestionTF" style="display: none;">
+                <div class="pt-3 ps-3 pe-3">
+                    <h3 id="QuestionTFh" class="m-0 p-0">
+                    </h3>
+                </div>
+                <hr>
+                <span class="d-flex choose align-items-center "id="o1TF" onclick="IsCorrectAnswer(1)">
+                    <i id="I1TF" class="fa-solid fa-chevron-up fa-rotate-90 icons " style="color: #ffffff;"></i>
+                    <label id="Option1TF" class="w-100 lable" ></label>
+                </span>
+                <span class="d-flex choose align-items-center "id="o2TF"onclick="IsCorrectAnswer(2)">
+                    <i id="I2TF" class="fa-solid fa-chevron-up fa-rotate-90 icons " style="color: #ffffff;"></i>
+                    <label class="w-100 lable" id="Option2TF"></label>
+                </span>
+            </div>
+            <div id="EndScore" style="display: none;">
+                <h4 class="p-3 Scoretxt">Your Score is:  <span id="Score"></span> of <span id="Total"></span></h4>
+                <div  class="d-flex justify-content-between p-3" >
+                    <button class="btn btn-primary w-25 Backbtn" onclick=" BackTOMain()" >Back To main</button>
+                </div>
+            </div>
+            <div id="Next" class="d-flex justify-content-between p-3 d-none" >
+                <button class="btn btn-primary" onclick=" BackTOMain()">Back To main</button>
+                <button class="btn btn-primary" onclick="ShowQuestions(1)">Next</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>

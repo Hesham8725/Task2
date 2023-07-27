@@ -1,0 +1,73 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.Landing{
+    background-color:#00D5E8;
+    height: 100vh;
+}
+.logotxt{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+    margin-right: 20vw;
+}
+.NavLinkes{
+    color: aliceblue;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.NavLinkes:hover{
+    color: blue;
+}
+.welcomeText{
+    font-size: 30px;
+    color: blueviolet;
+    margin-left: 5vi;
+    margin-top: 10vh;
+}
+.p2{
+    font-size: 25px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5vi;
+}
+.gameImg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70vi;
+    clip-path: polygon(40% 0%, 100% 0%,100% 100%,10% 100%);
+}
+.leftDiv{
+    width: 45%;
+}
+.btns{
+    margin-top: 50px;
+    margin-left: 5vi;
+}
+
+#SI{
+    height: 100vh;
+    background-color: #eee;
+}
+#SI center{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: fantasy;
+    padding-top: 20px;
+}
+.SI{
+    width: 100%;
+    padding-left: 30%;
+}
+.SI label{
+    font-size: large;
+    font-family: cursive;
+    padding: 5px;
+}
+.btns{
+    margin-top: 20vh;
+}
